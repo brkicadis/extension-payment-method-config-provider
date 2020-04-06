@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <payment_methods>
+        <creditcard name="Credit Card">
+            <merchant_account_id>8510aeb1-85ee-4a65-8a56-e042b361d403</merchant_account_id>
+            <secret>dbc5a498-9a66-43b9-bf1d-a618dd399684</secret>
+            <base_url>https://api-test.secure.epaiement-up2pay.fr</base_url>
+            <http_user>70000-APITEST-AP</http_user>
+            <http_pass>qD2wzQ_hrc!8</http_pass>
+            <wpp_url>https://page-test.secure.epaiement-up2pay.fr</wpp_url>
+            <three_d_merchant_account_id>95a918ee-d244-422e-9716-0aa7d41bf0c7</three_d_merchant_account_id>
+            <three_d_secret>dbc5a498-9a66-43b9-bf1d-a618dd399684</three_d_secret>
+        </creditcard>
+        <paypal name="PayPal">
+            <merchant_account_id>73e2f551-b309-462a-90a5-633fbb606c05</merchant_account_id>
+            <secret>dbc5a498-9a66-43b9-bf1d-a618dd399684</secret>
+            <base_url>https://api-test.secure.epaiement-up2pay.fr</base_url>
+            <http_user>70000-APITEST-AP</http_user>
+            <http_pass>qD2wzQ_hrc!8</http_pass>
+        </paypal>
+        <sofortbanking name="Sofort.">
+            <merchant_account_id>dc100d83-ff0b-474e-807e-7d3a636385c1</merchant_account_id>
+            <secret>58764ab3-5c56-450e-b747-7237a24e92a7</secret>
+            <base_url>https://api-test.secure.epaiement-up2pay.fr</base_url>
+            <http_user>16390-testing</http_user>
+            <http_pass>3!3013=D3fD8X7</http_pass>
+        </sofortbanking>
+        <alipay-xborder name="Alipay Cross-border">
+            <merchant_account_id>5b6678db-2e47-41f6-88c0-7d9d70678c31</merchant_account_id>
+            <secret>dbc5a498-9a66-43b9-bf1d-a618dd399684</secret>
+            <base_url>https://api-test.secure.epaiement-up2pay.fr</base_url>
+            <http_user>70000-APITEST-AP</http_user>
+            <http_pass>qD2wzQ_hrc!8</http_pass>
+        </alipay-xborder>
+        <ideal name="iDEAL">
+            <merchant_account_id>59829bf2-e500-463c-89cf-f34624c36b1b</merchant_account_id>
+            <secret>7a353766-23b5-4992-ae96-cb4232998954</secret>
+            <base_url>https://api-test.secure.epaiement-up2pay.fr</base_url>
+            <http_user>16390-testing</http_user>
+            <http_pass>3!3013=D3fD8X7</http_pass>
+        </ideal>
+        <wiretransfer name="POI/PIA">
+            <merchant_account_id>c932ca1f-8b23-4356-bf51-b40d916e5c85</merchant_account_id>
+            <secret>dbc5a498-9a66-43b9-bf1d-a618dd399684</secret>
+            <base_url>https://api-test.secure.epaiement-up2pay.fr</base_url>
+            <http_user>70000-APITEST-AP</http_user>
+            <http_pass>qD2wzQ_hrc!8</http_pass>
+        </wiretransfer>
+        <ratepay-invoice name="Guaranteed Invoice">
+            <merchant_account_id>*****</merchant_account_id>
+            <secret>*****</secret>
+            <base_url>*****</base_url>
+            <http_user>*****</http_user>
+            <http_pass>*****</http_pass>
+        </ratepay-invoice>
+        <eps name="eps-Überweisung">
+            <merchant_account_id>65647e52-fdfa-41db-b813-f2213c6b1cca</merchant_account_id>
+            <secret>20c6a95c-e39b-4e6a-971f-52cfb347d359</secret>
+            <base_url>https://api-test.secure.epaiement-up2pay.fr</base_url>
+            <http_user>16390-testing</http_user>
+            <http_pass>3!3013=D3fD8X7</http_pass>
+        </eps>
+        <giropay name="giropay">
+            <merchant_account_id>0054a5c6-79e8-4728-9cab-7d99504010ab</merchant_account_id>
+            <secret>0c8c6f3a-1534-4fa1-99d9-d1c644d43709</secret>
+            <base_url>https://api-test.secure.epaiement-up2pay.fr</base_url>
+            <http_user>16390-testing</http_user>
+            <http_pass>3!3013=D3fD8X7</http_pass>
+        </giropay>
+        <zapp name="Pay by Bank app (Zapp)">
+            <merchant_account_id>*****</merchant_account_id>
+            <secret>*****</secret>
+            <base_url>*****</base_url>
+            <http_user>*****</http_user>
+            <http_pass>*****</http_pass>
+        </zapp>
+        <sepacredit name="SEPA Credit Transfer">
+            <merchant_account_id>a677cab0-2a1f-4132-bd2b-1f611d6245c8</merchant_account_id>
+            <secret>ecdf5990-0372-47cd-a55d-037dccfe9d25</secret>
+            <base_url>https://api-test.secure.epaiement-up2pay.fr</base_url>
+            <http_user>16390-testing</http_user>
+            <http_pass>3!3013=D3fD8X7</http_pass>
+        </sepacredit>
+        <sepadirectdebit name="SEPA Direct Debit">
+            <merchant_account_id>8d623cef-68fc-4762-a6ab-1b5dbf1b18b2</merchant_account_id>
+            <secret>5caf2ed9-5f79-4e65-98cb-0b70d6f569aa</secret>
+            <base_url>https://api-test.secure.epaiement-up2pay.fr</base_url>
+            <http_user>16390-testing</http_user>
+            <http_pass>3!3013=D3fD8X7</http_pass>
+        </sepadirectdebit>
+        <masterpass name="Masterpass">
+            <merchant_account_id>6abc023f-a8c1-4172-8aca-86c2625600ed</merchant_account_id>
+            <secret>2d96596b-9d10-4c98-ac47-4d56e22fd878</secret>
+            <base_url>https://api-test.secure.epaiement-up2pay.fr</base_url>
+            <http_user>70000-APITEST-AP</http_user>
+            <http_pass>qD2wzQ_hrc!8</http_pass>
+        </masterpass>
+        <p24 name="Przelewy24">
+            <merchant_account_id>88a78575-a99c-4bda-b830-b4d70504b521</merchant_account_id>
+            <secret>82fd2e9e-f8e9-42fb-be25-b60a6907c996</secret>
+            <base_url>https://api-test.secure.epaiement-up2pay.fr</base_url>
+            <http_user>70000-APITEST-AP</http_user>
+            <http_pass>qD2wzQ_hrc!8</http_pass>
+        </p24>
+    </payment_methods>
+</config>

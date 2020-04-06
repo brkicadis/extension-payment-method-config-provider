@@ -1,0 +1,43 @@
+name: Create Pull Request
+# uncomment after all credentials are available
+on: push
+
+jobs:
+  run:
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      matrix:
+        operating-system: [ubuntu-latest]
+        shop-extension: ['woocommerce-ee', 'prestashop-ee', 'magento2-ee']
+    name: ${{ matrix.shop-extension }}
+    steps:
+      - name: ${{ matrix.shop-extension }} repository checkout
+        uses: wirecard/checkout@v2.0.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: brkicadis/${{ matrix.shop-extension }}
+      - name: extension-payment-method-config-provider repository checkout
+        run: git clone https://github.com/brkicadis/extension-payment-method-config-provider
+      - name: install python dependencies
+        run: pip install lxml
+      - name: update credentials
+        run: python ./extension-payment-method-config-provider/.bin/update_magento2_file.py
+      - name: check if credentials changed
+        run: |
+          if [[ magento2-ee == ${{ matrix.shop-extension }} ]]; then
+            bash ./extension-payment-method-config-provider/.bin/check_for_credential_updates.sh config.xml
+          else
+            bash ./extension-payment-method-config-provider/.bin/check_for_credential_updates.sh credentials_config.xml
+          fi
+
+      - name: create pull request for ${{ matrix.shop-extension }}
+        uses: wirecard/create-pull-request@v2
+        if: env.CREDENTIALS_CHANGED == 1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: update credentials
+          title: '[XML file] Update merchant credentials'
+          body: >
+            This is an auto-generated PR with update in credentials.
+          labels: credentials, automated pr
+          branch: update-credentials
