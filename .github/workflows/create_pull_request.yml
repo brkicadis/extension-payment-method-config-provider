@@ -14,7 +14,7 @@ jobs:
       - name: ${{ matrix.shop-extension }} repository checkout
         uses: wirecard/checkout@v2.0.0
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.TOKEN }}
           repository: brkicadis/${{ matrix.shop-extension }}
       - name: extension-payment-method-config-provider repository checkout
         run: git clone https://github.com/brkicadis/extension-payment-method-config-provider
@@ -34,7 +34,7 @@ jobs:
         uses: wirecard/create-pull-request@v2
         if: env.CREDENTIALS_CHANGED == 1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.TOKEN }}
           commit-message: update credentials
           title: '[XML file] Update merchant credentials'
           body: >
