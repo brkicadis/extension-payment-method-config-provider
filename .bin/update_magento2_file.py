@@ -1,6 +1,6 @@
 import lxml.etree as ET
 
-REPO_PATH = "/wirecard/"
+REPO_PATH = "wirecard"
 
 # import os
 # REPO_PATH = os.path.abspath("wirecard")
