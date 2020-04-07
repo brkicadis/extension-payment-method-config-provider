@@ -1,6 +1,6 @@
 import lxml.etree as ET
 
-REPO_PATH = "wirecard"
+REPO_PATH = "./extension-payment-method-config-provider/wirecard/"
 
 # import os
 # REPO_PATH = os.path.abspath("wirecard")

@@ -32,22 +32,13 @@ jobs:
       - name: install python dependencies
         run: pip install lxml
       - name: update credentials
-        run: |
-          ls
-          cd ..
-          ls
-          python ./.bin/update_magento2_file.py
+        run: python ./extension-payment-method-config-provider/.bin/update_magento2_file.py
       - name: check if credentials changed
         run: |
-          ls
-          cd ..
-          ls
-          cd ..
-          ls
           if [[ magento2-ee == ${{ matrix.shop-extension }} ]]; then
-            bash ./.bin/check_for_credential_updates.sh config.xml
+            bash ./extension-payment-method-config-provider/.bin/check_for_credential_updates.sh config.xml
           else
-            bash ./.bin/check_for_credential_updates.sh credentials_config.xml
+            bash ./extension-payment-method-config-provider/.bin/check_for_credential_updates.sh credentials_config.xml
           fi
 
       - name: create pull request for ${{ matrix.shop-extension }}
