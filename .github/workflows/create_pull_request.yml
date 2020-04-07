@@ -25,7 +25,7 @@ jobs:
       - name: extension-payment-method-config-provider repository checkout
         uses: wirecard/checkout@v2.0.0
         with:
-          path: main
+          path: ${{ matrix.shop-extension }}
           token: ${{ secrets.TOKEN }}
           repository: brkicadis/extension-payment-method-config-provider
       - name: set global git conf
@@ -33,7 +33,11 @@ jobs:
       - name: install python dependencies
         run: pip install lxml
       - name: update credentials
-        run: python ./.bin/update_magento2_file.py
+        run: |
+          ls
+          cd ..
+          ls
+          python ./.bin/update_magento2_file.py
       - name: check if credentials changed
         run: |
           ls
