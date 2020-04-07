@@ -5,10 +5,10 @@ set -x
 
 FILENAME=$1
 WIRECARD_PLUGIN_FILES=$(find . -name "${FILENAME}" -not -path "*./extension-payment-method-config-provider/*")
-DEFAULT_PLUGIN_FILES=$(find . -name "${FILENAME}")
+DEFAULT_PLUGIN_FILES=$(find extension-payment-method-config-provider/ -name "${FILENAME}")
 
 if [[ "${DEFAULT_PLUGIN_FILES}" == *"wirecard"* ]]; then
-  DEFAULT_REPO="wirecard/${FILENAME}"
+  DEFAULT_REPO="extension-payment-method-config-provider/wirecard/${FILENAME}"
 fi
 
 cmp --silent "${DEFAULT_REPO}" "${WIRECARD_PLUGIN_FILES}" && export CREDENTIALS_CHANGED=0 || export CREDENTIALS_CHANGED=1
