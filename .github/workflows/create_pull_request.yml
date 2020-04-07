@@ -24,7 +24,7 @@ jobs:
       - name: extension-payment-method-config-provider repository checkout
         uses: wirecard/checkout@v2.0.0
         with:
-          path: ${{ matrix.shop-extension }}
+          path: extension-payment-method-config-provider
           token: ${{ secrets.TOKEN }}
           repository: brkicadis/extension-payment-method-config-provider
       - name: set global git conf
