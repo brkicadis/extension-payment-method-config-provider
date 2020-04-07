@@ -34,13 +34,13 @@ jobs:
         run: |
           ls
           find . -name update_magento2_file.py
-          python ./extension-payment-method-config-provider/.bin/update_magento2_file.py
+          python ./.bin/update_magento2_file.py
       - name: check if credentials changed
         run: |
           if [[ magento2-ee == ${{ matrix.shop-extension }} ]]; then
-            bash ./extension-payment-method-config-provider/.bin/check_for_credential_updates.sh config.xml
+            bash ./.bin/check_for_credential_updates.sh config.xml
           else
-            bash ./extension-payment-method-config-provider/.bin/check_for_credential_updates.sh credentials_config.xml
+            bash ./.bin/check_for_credential_updates.sh credentials_config.xml
           fi
 
       - name: create pull request for ${{ matrix.shop-extension }}
