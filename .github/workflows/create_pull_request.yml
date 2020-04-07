@@ -19,12 +19,22 @@ jobs:
         with:
           token: ${{ secrets.TOKEN }}
           repository: brkicadis/${{ matrix.shop-extension }}
+      - name: set global git conf
+        run: git config --global user.email "" && git config --global user.name "github-actions"
       - name: extension-payment-method-config-provider repository checkout
-        run: git clone https://github.com/brkicadis/extension-payment-method-config-provider
+        uses: wirecard/checkout@v2.0.0
+        with:
+          token: ${{ secrets.TOKEN }}
+          repository: brkicadis/extension-payment-method-config-provider
+      - name: set global git conf
+        run: git config --global user.email "" && git config --global user.name "github-actions"
       - name: install python dependencies
         run: pip install lxml
       - name: update credentials
-        run: python ./extension-payment-method-config-provider/.bin/update_magento2_file.py
+        run: |
+          ls
+          find . -name update_magento2_file.py
+          python ./extension-payment-method-config-provider/.bin/update_magento2_file.py
       - name: check if credentials changed
         run: |
           if [[ magento2-ee == ${{ matrix.shop-extension }} ]]; then
