@@ -5,7 +5,7 @@ set -x
 
 FILENAME=$1
 WIRECARD_PLUGIN_FILES=$(find . -name "${FILENAME}" -not -path "*./extension-payment-method-config-provider/*")
-DEFAULT_PLUGIN_FILES=$(find extension-payment-method-config-provider/ -name "${FILENAME}")
+DEFAULT_PLUGIN_FILES=$(find . -name "${FILENAME}")
 
 if [[ "${DEFAULT_PLUGIN_FILES}" == *"wirecard"* ]]; then
   DEFAULT_REPO="extension-payment-method-config-provider/wirecard/${FILENAME}"
