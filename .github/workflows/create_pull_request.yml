@@ -37,6 +37,8 @@ jobs:
           ls
           cd ..
           ls
+          cd ..
+          ls
           if [[ magento2-ee == ${{ matrix.shop-extension }} ]]; then
             bash ./.bin/check_for_credential_updates.sh config.xml
           else
